@@ -7,7 +7,7 @@ Builds may be delayed up to 7 days.
 
 Docker:
 ```
-docker run --rm --name remotely -v /appdata/remotely:/config -p 5000:5000 delifer/remotely:latest
+docker run --rm --name remotely -v /appdata/remotely:/config -p 5000:5000 allram/remotely:latest
 ```
 
 Docker-Compose
@@ -15,7 +15,7 @@ Docker-Compose
 version: "2"
 services:
   remotely:
-    image: delifer/remotely:latest
+    image: allram/remotely:latest
     ports:
       - 5000:5000
     volumes:
