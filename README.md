@@ -1,6 +1,6 @@
 # docker-remotely
 
-[![Build Docker Images](https://github.com/Allram/docker-remotely/actions/workflows/main.yml/badge.svg)](https://github.com/Allram/docker-remotely/actions/workflows/main.yml)
+[![Build Docker Images](https://github.com/Allram/docker-remotely/actions/workflows/main.yml/badge.svg)](https://github.com/Allram/docker-remotely/actions/workflows/main.yml) [![Get latest release version](https://github.com/Allram/docker-remotely/actions/workflows/GetVersion.yml/badge.svg)](https://github.com/Allram/docker-remotely/actions/workflows/GetVersion.yml)
 
 Automated builds through github actions, will run at 10.00 when a new release is found.
 
