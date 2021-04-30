@@ -30,4 +30,4 @@ jobs:
         with:
           push: true
           build-args: VERSION=${{ steps.remotely.outputs.release }}
-          tags: delifer/remotely:latest,delifer/remotely:${{ steps.remotely.outputs.release }}
+          tags: allram/remotely:latest,allram/remotely:${{ steps.remotely.outputs.release }}

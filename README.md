@@ -1,7 +1,8 @@
 # docker-remotely
 
-Automated builds through github actions.
-Builds may be delayed up to 7 days.
+[![Build Docker Images](https://github.com/Allram/docker-remotely/actions/workflows/main.yml/badge.svg)](https://github.com/Allram/docker-remotely/actions/workflows/main.yml)
+
+Automated builds through github actions, will run at 10.00 when a new release is found.
 
 ## Usage
 
