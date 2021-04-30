@@ -1,6 +1,11 @@
 name: Build Docker Images
 on:
-  repository_dispatch:
+  push:
+    paths:
+      - 'release_versions/**'
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
   build:
