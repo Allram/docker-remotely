@@ -43,11 +43,15 @@ RUN \
   VERSION=$(curl -s https://api.github.com/repos/lucent-sea/Remotely/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")') && \
   wget -q https://github.com/lucent-sea/Remotely/releases/download/$VERSION/Remotely_Server_Linux-x64.zip && \
   unzip -o Remotely_Server_Linux-x64.zip -d /var/www/remotely && \
-  rm Remotely_Server_Linux-x64.zip && \
-  setfacl -R -m u:www-data:rwx /var/www/remotely && \
-  chown -R www-data:www-data /var/www/remotely
+
+RUN \
+  mkdir -p /remotely-data && \
+  sed -i 's/DataSource=Remotely.db/DataSource=\/remotely-data\/Remotely.db/' /var/www/remotely/appsettings.json
+
+VOLUME "/remotely-data"
+WORKDIR /var/www/remotely
 
 COPY docker-entrypoint.sh /
 
-WORKDIR /var/www/remotely
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
