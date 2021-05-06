@@ -4,8 +4,24 @@
 FILE=/config/appsettings.json
 DEFAULT=/var/www/remotely/appsettings.json
 
+ServerDir=/var/www/remotely
+RemotelyData=/remotely-data
+AppSettingsVolume=/remotely-data/appsettings.json
+AppSettingsWww=/var/www/remotely/appsettings.json
+
 APPPATH=/var/www/remotely
 CONFIGPATH=/config
+
+if [ ! -f "$AppSettingsVolume" ]; then
+	echo "Copying appsettings.json to volume."
+	cp "$AppSettingsWww" "$AppSettingsVolume"
+fi
+
+if [ -f "$AppSettingsWww" ]; then
+	rm "$AppSettingsWww"
+fi
+
+ln -s "$AppSettingsVolume" "$AppSettingsWww"
 
 if [ -f "$FILE" ]; then
 	# Config Exists
